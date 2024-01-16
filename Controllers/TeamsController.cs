@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using NewApi.Models;
 using NewWeb.Services;
@@ -6,7 +5,7 @@ using NewWeb.Services;
 namespace NewWen.Controllers;
 
 [ApiController]
-[Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
+[Route("api/[controller]")]
 public class TeamsController: ControllerBase{
     private readonly TeamService teamService;
     public TeamsController(TeamService mongoDBService){
@@ -14,7 +13,7 @@ public class TeamsController: ControllerBase{
     }
     
     [HttpGet]
-    [Microsoft.AspNetCore.Mvc.Route("GetBestTeam")]
+    [Route("GetBestTeam")]
     public IActionResult Get(){
         var teams = teamService?.Get();
         return Ok(teams);

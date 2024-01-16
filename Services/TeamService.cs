@@ -21,7 +21,7 @@ public class TeamService
     }
     public List<Team> Get()
     {
-        return _teams.Find(team => true).ToList();
+        return _teams.Find(_ => true).ToList();
     }
     public Team Get(string id)
     {
